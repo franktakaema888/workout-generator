@@ -23,9 +23,7 @@ export default function WorkoutForm({ onFormSubmit }) {
 
   return (
   <>
-    {/* For Container */}
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
-      {/* Enter Name */}
       <TextField
         fullWidth
         margin="normal"
@@ -34,7 +32,7 @@ export default function WorkoutForm({ onFormSubmit }) {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      {/* Select Fitness Level from Drop Down */}
+      {/* I think we can break dropdowns like these into their own components */}
       <FormControl fullWidth margin="normal">
         <InputLabel id="fitness-level-label">Fitness Level</InputLabel>
         <Select
@@ -49,7 +47,7 @@ export default function WorkoutForm({ onFormSubmit }) {
           <MenuItem value="advanced">Advanced</MenuItem>
         </Select>
       </FormControl>
-      {/* Select Workout Type */}
+      {/* This seems to be repeated code. We can probably create a generic component and reuse it with some data provided via props */}
       <FormControl fullWidth margin="normal">
         <InputLabel id="workout-type-label">Workout Type</InputLabel>
         <Select
@@ -58,13 +56,11 @@ export default function WorkoutForm({ onFormSubmit }) {
           label="Workout Type"
           onChange={(e) => setWorkoutType(e.target.value)}
         >
-          {/* Items for workout type options */}
           <MenuItem value="cardio">Cardio</MenuItem>
           <MenuItem value="strength">Strength</MenuItem>
           <MenuItem value="flexibility">Flexibility</MenuItem>
         </Select>
       </FormControl>
-      {/* Select Duration of Workout */}
       <FormControl fullWidth margin="normal">
         <InputLabel id="workout-type-label">Duration (minutes)</InputLabel>
         <Select
@@ -73,7 +69,6 @@ export default function WorkoutForm({ onFormSubmit }) {
           label="Duration (minutes)"
           onChange={(e) => setDuration(e.target.value)}
         >
-          {/* Items for duration of workout */}
           <MenuItem value="15">15 min</MenuItem>
           <MenuItem value="30">30 min</MenuItem>
           <MenuItem value="45">45 min</MenuItem>
@@ -83,7 +78,6 @@ export default function WorkoutForm({ onFormSubmit }) {
         </Select>
       </FormControl>
 
-      {/* Submit Button to generate workout */}
       <Button variant="contained" color="primary" type="submit" sx={{ mt: 2 }}>
         Generate Workout
       </Button>

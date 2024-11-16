@@ -1,5 +1,7 @@
 # Rocket Academy Coding Bootcamp: Project 1 - Frontend App
 
+I think you could have added some information about your project here, so users of the code will know what it is for
+
 https://bc.rocketacademy.co/1-frontend/1.p-frontend-app
 
 ## Available Scripts

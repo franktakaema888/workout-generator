@@ -1,14 +1,14 @@
 import "./App.css";
 import {useState} from 'react';
-// Import Components
-import BasicBreadcrumbs from './components/NavBar';
+// redundant comment
+import BasicBreadcrumbs from './components/NavBar'; // Why not call it NavBar instead of BasicBreadcrumbs? This is a bit confusing
 import WorkoutForm from './components/WorkoutForm';
 import WorkoutRoutine from './components/WorkoutRoutine';
 import generateWorkout from './utils/workoutGenerator';
 
 function App() {
-  
-  const [workoutData, setWorkoutData] = useState(null); // workout variable to hold workout data
+  // I recommend to set the default state in the data structure to expect here, e.g. {}, [], "", 0, false
+  const [workoutData, setWorkoutData] = useState(null); 
 
   // handle sumbission of workout form
   const handleFormSubmit = (data) => {
@@ -20,16 +20,17 @@ function App() {
   
   return (
     <>
-      {/* Navigation Bar at the top */}
+      {/* If you named the component appropriately, then this comment wouldn't be necessary */}
       <div><BasicBreadcrumbs /></div>
       <br />
-      {/* Card Container for the workout form */}
+      {/* Redundant comment */}
       <div className="card">
           <h1 className="text-center">Personalized Workout Generator</h1>
           <WorkoutForm onFormSubmit={handleFormSubmit} />
       </div>
       <br />
-      {/* Card Container for workout routines that will be generated based on user input */}
+      {/* Redundant comment somewhat */}
+      {/* Why not conditionally render the whole section? Seems like it might be a bit confusing to see a Workout Plan heading, but not seeing a workout plan */}
       <div className="card">
         <h1 className="text-center">Workout Plan</h1>
         {workoutData && <WorkoutRoutine data={workoutData} />}
